@@ -1,0 +1,17 @@
+#
+# Copyright 2022 OreField - All Rights Reserved
+#
+
+[versions]
+javaAnnotations = "23.0.0"
+adventure = "4.9.3"
+
+test-junit = "5.8.2"
+
+[libraries]
+javaAnnotations = { module = "org.jetbrains:annotations", version.ref = "javaAnnotations" }
+adventure-api = { module = "net.kyori:adventure-api", version.ref = "adventure"}
+
+test-junit-bom = { module = "org.junit:junit-bom", version.ref = "test-junit" }
+test-junit-api = { module = "org.junit.jupiter:junit-jupiter-api" }
+test-junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine" }

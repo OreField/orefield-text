@@ -1,0 +1,7 @@
+<component name="CopyrightManager">
+  <settings default="orefield-copyright">
+    <module2copyright>
+      <element module="All" copyright="orefield-copyright" />
+    </module2copyright>
+  </settings>
+</component>

@@ -1,0 +1,7 @@
+*
+
+!.gitignore
+!/copyright
+!/copyright/orefield_copyright.xml
+!/copyright/profiles_settings.xml
+!/vcs.xml
