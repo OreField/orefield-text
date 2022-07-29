@@ -9,7 +9,8 @@ dependencyResolutionManagement {
 }
 
 sequenceOf(
-    "adventure"
+    "adventure",
+    "common"
 ).forEach {
     include(it)
     project(":$it").name = "${rootProject.name}-$it"
