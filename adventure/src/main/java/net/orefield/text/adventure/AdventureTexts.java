@@ -2,9 +2,13 @@
  * Copyright 2022 OreField - All Rights Reserved
  */
 
-package net.orefield.text;
+package net.orefield.text.adventure;
 
 import static org.jetbrains.annotations.Nls.Capitalization.Title;
+
+import net.kyori.adventure.text.Component;
+import net.orefield.text.Category;
+import net.orefield.text.Property;
 
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nls;
@@ -15,28 +19,28 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * A factory for creating messages compliant with OreField's design system and standards.
+ * A class for static access to {@link AdventureText}.
  *
  * @author Sparky983
- * @param <Message> The type of the message.
  * @since 1.0.0
  */
-public interface Text<Message> {
+public final class AdventureTexts {
+
+    private final static AdventureText INSTANCE = new AdventureText();
 
     /**
-     * The separator used to separate the category and message of an
-     * {@link #information(Category, Object) information} message.
+     * Returns the singleton {@link AdventureText} instance.
      *
+     * @author Sparky983
+     * @return The instance.
      * @since 1.0.0
      */
-    @Nls char SEPARATOR = '\u2192';
+    @Contract(pure = true)
+    public static @NotNull AdventureText adventureText() {
+        return INSTANCE;
+    }
 
-    /**
-     * The indent for properties inside a {@link #propertyGroup(String, Collection)}  propertyGroup}.
-     *
-     * @since 1.0.0
-     */
-    @Nls String INDENT = "  ";
+    // Documentation copied from net.orefield.text.Text
 
     /**
      * Returns a new title.
@@ -48,13 +52,16 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(value = "_ -> new", pure = true)
-    @NotNull
-    Message title(final @Nls(capitalization = Title) @NotNull String title);
+    public static @NotNull Component title(
+            final @Nls(capitalization = Title) @NotNull String title) {
+        return adventureText().title(title);
+    }
 
     /**
      * Creates a title for the specified {@code category}.
      * <p>
      * The same as calling {@code Text.title(category.toString())}.
+     *
      * @author Sparky983
      * @param category The category.
      * @return The title.
@@ -62,8 +69,9 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(value = "_ -> new", pure = true)
-    @NotNull
-    Message title(final @NotNull Category category);
+    public static @NotNull Component title(final @NotNull Category category) {
+        return adventureText().title(category);
+    }
 
     /**
      * Returns the OreField title.
@@ -73,8 +81,9 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(pure = true)
-    @NotNull
-    Message orefield();
+    public static @NotNull Component orefield() {
+        return adventureText().orefield();
+    }
 
     /**
      * Returns a new informational/system message.
@@ -87,9 +96,10 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(value = "_, _ -> new", pure = true)
-    @NotNull
-    Message information(final @NotNull Category category,
-            final @NotNull Message message);
+    public static @NotNull Component information(final @NotNull Category category,
+            final @NotNull Component message) {
+        return adventureText().information(category, message);
+    }
 
     /**
      * Return a new error message.
@@ -101,8 +111,9 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(value = "_ -> new", pure = true)
-    @NotNull
-    Message error(final @NotNull Message message);
+    public static @NotNull Component error(final @NotNull Component message) {
+        return adventureText().error(message);
+    }
 
     /**
      * Returns a new warning message.
@@ -114,8 +125,9 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(value = "_ -> new", pure = true)
-    @NotNull
-    Message warning(final @NotNull Message message);
+    public static @NotNull Component warning(final @NotNull Component message) {
+        return adventureText().warning(message);
+    }
 
     /**
      * Returns a new call to action message.
@@ -127,8 +139,9 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(value = "_ -> new", pure = true)
-    @NotNull
-    Message callToAction(final @NotNull Message message);
+    public static @NotNull Component callToAction(final @NotNull Component message) {
+        return adventureText().callToAction(message);
+    }
 
     /**
      * Returns a new property message.
@@ -140,8 +153,10 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(value = "_ -> new", pure = true)
-    @NotNull
-    Message property(final @NotNull Property<? extends Message> property);
+    public static @NotNull Component property(
+            final @NotNull Property<? extends Component> property) {
+        return adventureText().property(property);
+    }
 
     /**
      * Returns a new property message of a property with the specified {@code propertyName} and
@@ -159,10 +174,10 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(value = "_, _ -> new", pure = true)
-    @NotNull
-    Message property(final @Nls(capitalization = Title) @NotNull String propertyName,
-            final @NotNull Message value);
-
+    public static @NotNull Component property(final @NotNull String propertyName,
+            final @NotNull Component value) {
+        return adventureText().property(propertyName, value);
+    }
 
     /**
      * Returns a new property group message with the specified {@code groupName} and
@@ -175,9 +190,9 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(value = "_, _ -> new", pure = true)
-    @NotNull
-    @Unmodifiable
-    List<@NotNull Message> propertyGroup(
+    public static @Unmodifiable @NotNull List<@Nls @NotNull Component> propertyGroup(
             final @Nls(capitalization = Title) @NotNull String propertyGroupName,
-            final @NotNull Collection<@NotNull Property<? extends Message>> properties);
+            final @NotNull Collection<@NotNull Property<? extends @NotNull Component>> properties) {
+        return adventureText().propertyGroup(propertyGroupName, properties);
+    }
 }

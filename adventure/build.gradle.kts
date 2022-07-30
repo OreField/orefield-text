@@ -8,4 +8,5 @@ plugins {
 
 dependencies {
     api(libs.adventure.api)
+    api(project(":orefield-text-common"))
 }
