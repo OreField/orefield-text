@@ -37,4 +37,4 @@ body:
     attributes:
       label: Relevant log output
       description: If applicable, provide relevant log output. No need for backticks here.
-      render: shell
+      render: Shell
