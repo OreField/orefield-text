@@ -34,7 +34,7 @@ class CategoryImpl implements Category {
      */
     @Contract(pure = true)
     CategoryImpl(final @NonNls @NotNull String name,
-                 final @Nls(capitalization = Title) @NotNull String friendlyName) {
+            final @Nls(capitalization = Title) @NotNull String friendlyName) {
         this.name = Preconditions.checkNotNull(name, "name");
         this.friendlyName = Preconditions.checkNotNull(friendlyName, "friendlyName");
     }

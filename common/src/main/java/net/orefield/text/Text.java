@@ -93,7 +93,7 @@ public interface Text<Message> {
     @Nls
     @NotNull
     Message information(final @NotNull Category category,
-                        final @Nls(capitalization = Sentence) @NotNull Message message);
+            final @Nls(capitalization = Sentence) @NotNull Message message);
 
     /**
      * Return a new error message.
@@ -170,7 +170,7 @@ public interface Text<Message> {
     @Nls
     @NotNull
     Message property(final @Nls(capitalization = Title) @NotNull String propertyName,
-                     final @Nls @NotNull Message value);
+            final @Nls @NotNull Message value);
 
 
     /**
@@ -184,10 +184,9 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(value = "_, _ -> new", pure = true)
-    @Nls
     @NotNull
     @Unmodifiable
-    List<Message> propertyGroup(
+    List<@Nls @NotNull Message> propertyGroup(
             final @Nls(capitalization = Title) @NotNull String propertyGroupName,
             final @NotNull Collection<@NotNull Property<? extends Message>> properties);
 }

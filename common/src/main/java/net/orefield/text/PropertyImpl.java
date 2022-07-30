@@ -34,7 +34,7 @@ class PropertyImpl<Message> implements Property<Message> {
      */
     @Contract(pure = true)
     PropertyImpl(final @Nls(capitalization = Title) @NotNull String propertyName,
-                 final @NotNull Message value) {
+            final @NotNull Message value) {
         this.propertyName = Preconditions.checkNotNull(propertyName, "propertyName");
         this.value = Preconditions.checkNotNull(value, "value");
     }

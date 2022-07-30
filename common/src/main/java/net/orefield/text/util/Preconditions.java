@@ -41,7 +41,7 @@ public final class Preconditions {
      */
     @Contract(value = "false, _ -> fail", pure = true)
     public static void checkArgument(final boolean isValid,
-                                     final @NonNls @Nullable String message) {
+            final @NonNls @Nullable String message) {
         if (!isValid) {
             throw new IllegalArgumentException(message);
         }
@@ -78,7 +78,7 @@ public final class Preconditions {
      */
     @Contract(value = "null, _ -> fail; !null, _ -> param1", pure = true)
     public static <T> @NotNull T checkNotNull(final @Nullable T t,
-                                              final @NonNls @Nullable String parameterName) {
+            final @NonNls @Nullable String parameterName) {
         if (t == null) {
             throw new NullPointerException("[" + parameterName + "] cannot be null");
         }
