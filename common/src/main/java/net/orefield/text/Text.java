@@ -61,7 +61,7 @@ public interface Text<Message> {
     @Contract(value = "_ -> new", pure = true)
     @Nls(capitalization = Title)
     @NotNull
-    Message title(final @Nls @NotNull Category category);
+    Message title(final @NotNull Category category);
 
     /**
      * Returns the OreField title.
