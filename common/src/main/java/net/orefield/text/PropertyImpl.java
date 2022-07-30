@@ -17,13 +17,21 @@ import org.jetbrains.annotations.NotNull;
  *
  * @author Sparky983
  * @param <Message> The message type.
- * @since 1.0.0
  */
 class PropertyImpl<Message> implements Property<Message> {
 
     private final String propertyName;
     private final Message value;
 
+    /**
+     * Constructs a new {@code PropertyImpl} with the specified {@code propertyName} and
+     * {@code value}.
+     *
+     * @author Sparky983
+     * @param propertyName The property name.
+     * @param value The value.
+     * @throws NullPointerException if {@code propertyName} or {@code value} are {@code null}.
+     */
     @Contract(pure = true)
     PropertyImpl(final @Nls(capitalization = Title) @NotNull String propertyName,
                  final @NotNull Message value) {
