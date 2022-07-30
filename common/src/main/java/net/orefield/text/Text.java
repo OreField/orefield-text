@@ -9,6 +9,10 @@ import static org.jetbrains.annotations.Nls.Capitalization.Title;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Unmodifiable;
+
+import java.util.Collection;
+import java.util.List;
 
 /**
  * A factory for creating messages compliant with OreField's design system and standards.
@@ -171,7 +175,8 @@ public interface Text<Message> {
     @Contract(value = "_, _ -> new", pure = true)
     @Nls
     @NotNull
-    Message propertyGroup(
+    @Unmodifiable
+    List<Message> propertyGroup(
             final @Nls(capitalization = Title) @NotNull String propertyGroupName,
-            final @NotNull Iterable<@NotNull Property<? extends Message>> properties);
+            final @NotNull Collection<@NotNull Property<? extends Message>> properties);
 }
