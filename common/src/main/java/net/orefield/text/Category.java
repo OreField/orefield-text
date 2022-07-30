@@ -74,7 +74,7 @@ public interface Category {
     @Contract(value = "_, _ -> new", pure = true)
     static @NotNull Category of(final @NonNls @NotNull String name,
                                 final @Nls(capitalization = Title) @NotNull String friendlyName) {
-        return null;
+        return new CategoryImpl(name, friendlyName);
     }
 
     /**
