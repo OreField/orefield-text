@@ -3,7 +3,7 @@
  */
 
 package net.orefield.text;
-import static org.jetbrains.annotations.Nls.Capitalization.Sentence;
+
 import static org.jetbrains.annotations.Nls.Capitalization.Title;
 
 import org.jetbrains.annotations.Contract;
