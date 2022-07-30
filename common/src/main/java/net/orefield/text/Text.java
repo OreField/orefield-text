@@ -32,7 +32,7 @@ public interface Text<Message> {
     @Nls char SEPARATOR = '\u2192';
 
     /**
-     * The indent for properties inside a {@link #propertyGroup(String, Iterable) propertyGroup}.
+     * The indent for properties inside a {@link #propertyGroup(String, Collection)}  propertyGroup}.
      *
      * @since 1.0.0
      */
@@ -54,8 +54,8 @@ public interface Text<Message> {
 
     /**
      * Creates a title for the specified {@code category}.
-     *
-     * @implNote The same as calling {@code Text.title(category.toString())}.
+     * <p>
+     * The same as calling {@code Text.title(category.toString())}.
      * @author Sparky983
      * @param category The category.
      * @return The title.
@@ -156,8 +156,9 @@ public interface Text<Message> {
      * {@code message}.
      * <p>
      * The same as calling
+     * <p>
+     * The same as calling {@code Text.property(Property.of(propertyName, message))}.
      *
-     * @implNote The same as calling {@code Text.property(Property.of(propertyName, message))}.
      * @author Sparky983
      * @param propertyName The property name.
      * @param value The property value.
@@ -172,6 +173,16 @@ public interface Text<Message> {
                      final @Nls @NotNull Message value);
 
 
+    /**
+     * Returns a new property group message with the specified {@code groupName} and
+     * {@code properties}.
+     *
+     * @author Sparky983
+     * @param propertyGroupName The group name.
+     * @param properties The properties.
+     * @return The property group.
+     * @since 1.0.0
+     */
     @Contract(value = "_, _ -> new", pure = true)
     @Nls
     @NotNull
