@@ -28,7 +28,7 @@ dependencyResolutionManagement {
 
 sequenceOf(
     "adventure",
-    "common"
+    "api"
 ).forEach {
     include(it)
     project(":$it").name = "${rootProject.name}-$it"
