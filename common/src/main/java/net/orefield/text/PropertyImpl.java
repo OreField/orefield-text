@@ -46,7 +46,7 @@ class PropertyImpl<Message> implements Property<Message> {
     }
 
     @Override
-    public @Nls @NotNull Message getValue() {
+    public @NotNull Message getValue() {
 
         return value;
     }

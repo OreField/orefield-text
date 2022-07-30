@@ -37,7 +37,7 @@ public interface Property<Message> {
     @Contract(pure = true)
     static <T> @NotNull Property<T> of(
             final @Nls(capitalization = Title) @NotNull String propertyName,
-            final @Nls @NotNull T value) {
+            final @NotNull T value) {
         return new PropertyImpl<>(propertyName, value);
     }
 
@@ -61,7 +61,6 @@ public interface Property<Message> {
      * @since 1.0.0
      */
     @Contract(pure = true)
-    @Nls
     @NotNull
     Message getValue();
 }

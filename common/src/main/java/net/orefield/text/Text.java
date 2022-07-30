@@ -48,9 +48,8 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(value = "_ -> new", pure = true)
-    @Nls(capitalization = Title)
     @NotNull
-    Message title(final @Nls @NotNull String title);
+    Message title(final @Nls(capitalization = Title) @NotNull String title);
 
     /**
      * Creates a title for the specified {@code category}.
@@ -63,7 +62,6 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(value = "_ -> new", pure = true)
-    @Nls(capitalization = Title)
     @NotNull
     Message title(final @NotNull Category category);
 
@@ -75,7 +73,6 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(pure = true)
-    @Nls(capitalization = Title)
     @NotNull
     Message orefield();
 
@@ -90,10 +87,9 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(value = "_, _ -> new", pure = true)
-    @Nls
     @NotNull
     Message information(final @NotNull Category category,
-            final @Nls(capitalization = Sentence) @NotNull Message message);
+            final @NotNull Message message);
 
     /**
      * Return a new error message.
@@ -105,9 +101,8 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(value = "_ -> new", pure = true)
-    @Nls
     @NotNull
-    Message error(final @Nls(capitalization = Sentence) @NotNull Message message);
+    Message error(final @NotNull Message message);
 
     /**
      * Returns a new warning message.
@@ -119,9 +114,8 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(value = "_ -> new", pure = true)
-    @Nls
     @NotNull
-    Message warning(final @Nls(capitalization = Sentence) @NotNull Message message);
+    Message warning(final @NotNull Message message);
 
     /**
      * Returns a new call to action message.
@@ -133,9 +127,8 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(value = "_ -> new", pure = true)
-    @Nls
     @NotNull
-    Message callToAction(final @Nls @NotNull Message message);
+    Message callToAction(final @NotNull Message message);
 
     /**
      * Returns a new property message.
@@ -147,7 +140,6 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(value = "_ -> new", pure = true)
-    @Nls
     @NotNull
     Message property(final @NotNull Property<? extends Message> property);
 
@@ -167,10 +159,9 @@ public interface Text<Message> {
      * @since 1.0.0
      */
     @Contract(value = "_, _ -> new", pure = true)
-    @Nls
     @NotNull
     Message property(final @Nls(capitalization = Title) @NotNull String propertyName,
-            final @Nls @NotNull Message value);
+            final @NotNull Message value);
 
 
     /**
@@ -186,7 +177,7 @@ public interface Text<Message> {
     @Contract(value = "_, _ -> new", pure = true)
     @NotNull
     @Unmodifiable
-    List<@Nls @NotNull Message> propertyGroup(
+    List<@NotNull Message> propertyGroup(
             final @Nls(capitalization = Title) @NotNull String propertyGroupName,
             final @NotNull Collection<@NotNull Property<? extends Message>> properties);
 }
