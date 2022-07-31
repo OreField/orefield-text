@@ -30,6 +30,12 @@ repositories {
     mavenCentral()
 }
 
+tasks.jacocoTestReport {
+    reports {
+        xml.required.set(true)
+    }
+}
+
 publishing {
     publications {
         create<MavenPublication>(name) {
