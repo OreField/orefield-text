@@ -21,12 +21,19 @@
  */
 
 plugins {
+    jacoco
     `maven-publish`
     signing
 }
 
 repositories {
     mavenCentral()
+}
+
+tasks.getByName<JacocoReport>("jacocoTestReport") {
+    reports {
+        xml.required.set(true)
+    }
 }
 
 publishing {
