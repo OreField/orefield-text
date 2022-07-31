@@ -30,7 +30,7 @@ repositories {
     mavenCentral()
 }
 
-tasks.jacocoTestReport {
+tasks.getByName<JacocoReport>("jacocoTestReport") {
     reports {
         xml.required.set(true)
     }
