@@ -1,0 +1,8 @@
+{
+    "label": "Messages",
+    "position": 2,
+    "link": {
+        "type": "generated-index",
+        "description": "Documentation about all OreField Text messages. "
+    }
+}
