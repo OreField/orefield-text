@@ -82,7 +82,7 @@ const config = {
                         type: "doc",
                         docId: "getting-started",
                         position: "left",
-                        label: "Getting started",
+                        label: "Getting Started",
                     },
                     {
                         href: "https://github.com/orefield/orefield-text",
@@ -98,8 +98,8 @@ const config = {
                         title: "Docs",
                         items: [
                             {
-                                label: "Tutorial",
-                                to: "/docs/intro",
+                                label: "Getting started",
+                                to: "/docs/getting-started",
                             },
                         ],
                     },
