@@ -31,7 +31,7 @@ const config = {
     title: "OreField Text",
     tagline: "Beautiful   messages",
     url: "https://orefield.github.io/",
-    baseUrl: "/",
+    baseUrl: "/orefield-text/",
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
