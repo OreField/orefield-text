@@ -1,0 +1,80 @@
+---
+sidebar_position: 1
+description: Get started
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# Getting Started
+
+## Installation
+
+First, add the repository:
+
+<Tabs>
+    <TabItem value="maven" label="Maven" default>
+        <CodeBlock language="xml">
+            {`<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>`}
+        </CodeBlock>
+    </TabItem>
+    <TabItem value="gradle (groovy)" label="Gradle (groovy)">
+        <CodeBlock language="groovy">
+            {`repositories {
+    maven { url 'https://jitpack.io' }
+}
+`}
+        </CodeBlock>
+    </TabItem>
+    <TabItem value="gradle (kotlin)" label="Gradle (kotlin)">
+        <CodeBlock language="kotlin">
+            {`repositories {
+    maven("https://jitpack.io")
+}`}
+        </CodeBlock>
+    </TabItem>
+</Tabs>
+
+And then the dependency:
+
+<Tabs>
+    <TabItem value="maven" label="Maven" default>
+        <CodeBlock language="xml">
+            {`<dependencies>
+    <dependency>
+        <groupId>net.orefield.orefield-text</groupId>
+        <artifactId>orefield-text-{platform}</artifactId>
+        <version>v1.0.0</version>
+    </dependency>
+</dependencies>`}
+        </CodeBlock>
+    </TabItem>
+    <TabItem value="gradle (groovy)" label="Gradle (groovy)">
+        <CodeBlock language="groovy">
+            {`dependencies {
+    implementation 'net.orefield.orefield-text:orefield-text-{platform}:v1.0.0'
+}`}
+        </CodeBlock>
+    </TabItem>
+    <TabItem value="gradle (kotlin)" label="Gradle (kotlin)">
+        <CodeBlock language="kotlin">
+            {`dependencies {
+    implementation("net.orefield.orefield-text:orefield-text-{platform}:v1.0.0")
+}`}
+        </CodeBlock>
+    </TabItem>
+</Tabs>
+
+## Platforms
+
+The supported platforms are:
+
+-   adventure - For the adventure api
+
+##
