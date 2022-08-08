@@ -19,6 +19,10 @@ Build the project
 gradlew build
 ```
 
+## 📕 Documentation
+
+[Getting Started](https://orefield.github.io/orefield-text/docs/getting-started)
+
 ## 🤝 Contributing
 
 [CONTRIBUTING.md](CONTRIBUTING.md)
