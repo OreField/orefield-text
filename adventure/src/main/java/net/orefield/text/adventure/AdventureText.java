@@ -110,7 +110,8 @@ public class AdventureText implements Text<Component> {
      * @see #SEPARATOR
      */
     @VisibleForTesting
-    static final Component SEPARATOR_COMPONENT = Component.text(SEPARATOR + ' ', DARK_GRAY);
+    static final Component SEPARATOR_COMPONENT = Component.text(
+        String.valueOf(new char[] {SEPARATOR, ' '}), DARK_GRAY);
 
     /**
      * Cached component version of {@link #INDENT}.
