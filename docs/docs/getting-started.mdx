@@ -23,28 +23,7 @@ First, add the repository:
     </repository>
 </repositories>`}
         </CodeBlock>
-    </TabItem>
-    <TabItem value="gradle (groovy)" label="Gradle (groovy)">
-        <CodeBlock language="groovy">
-            {`repositories {
-    maven { url 'https://jitpack.io' }
-}
-`}
-        </CodeBlock>
-    </TabItem>
-    <TabItem value="gradle (kotlin)" label="Gradle (kotlin)">
-        <CodeBlock language="kotlin">
-            {`repositories {
-    maven("https://jitpack.io")
-}`}
-        </CodeBlock>
-    </TabItem>
-</Tabs>
-
-And then the dependency:
-
-<Tabs>
-    <TabItem value="maven" label="Maven" default>
+        Then add the dependency:
         <CodeBlock language="xml">
             {`<dependencies>
     <dependency>
@@ -57,12 +36,25 @@ And then the dependency:
     </TabItem>
     <TabItem value="gradle (groovy)" label="Gradle (groovy)">
         <CodeBlock language="groovy">
+            {`repositories {
+    maven { url 'https://jitpack.io' }
+}
+`}
+        </CodeBlock>
+        Then add the dependency:
+        <CodeBlock language="groovy">
             {`dependencies {
     implementation 'net.orefield.orefield-text:orefield-text-{platform}:v1.0.0'
 }`}
         </CodeBlock>
     </TabItem>
     <TabItem value="gradle (kotlin)" label="Gradle (kotlin)">
+        <CodeBlock language="kotlin">
+            {`repositories {
+    maven("https://jitpack.io")
+}`}
+        </CodeBlock>
+        Then add the dependency:
         <CodeBlock language="kotlin">
             {`dependencies {
     implementation("net.orefield.orefield-text:orefield-text-{platform}:v1.0.0")
