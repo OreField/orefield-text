@@ -62,6 +62,10 @@ class CategoryImpl implements Category {
         return name;
     }
 
+    public @Nls(capitalization = Title) @NotNull String toString() {
+        return friendlyName;
+    }
+
     @Override
     public boolean equals(final @Nullable Object o) {
         if (this == o) return true;
@@ -78,13 +82,5 @@ class CategoryImpl implements Category {
         int result = name.hashCode();
         result = 31 * result + friendlyName.hashCode();
         return result;
-    }
-
-    @Override
-    public @NotNull String toString() {
-        return "CategoryImpl(" +
-            "name='" + name + '\'' +
-            ", friendlyName='" + friendlyName + '\'' +
-            ')';
     }
 }
