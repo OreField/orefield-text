@@ -4,9 +4,13 @@ on:
   pull_request:
     branches:
       - master
+    paths:
+      - docs/**
   push:
     branches:
       - master
+    paths:
+      - docs/**
 
 jobs:
   format:
@@ -22,5 +26,5 @@ jobs:
           cache-dependency-path: docs/package-lock.json
       - name: Check format with Prettier
         run: |
-          cd docs 
+          cd docs
           npx prettier --check "**/*.{js,jsx,ts,tsx,mdx}"
