@@ -29,6 +29,7 @@ import net.orefield.text.util.Preconditions;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Implementation of {@link Property}.
@@ -59,13 +60,37 @@ class PropertyImpl<Message> implements Property<Message> {
 
     @Override
     public @Nls(capitalization = Title) @NotNull String getPropertyName() {
-
         return propertyName;
     }
 
     @Override
     public @NotNull Message getValue() {
-
         return value;
+    }
+
+    @Override
+    public boolean equals(final @Nullable Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PropertyImpl)) return false;
+
+        PropertyImpl<?> property = (PropertyImpl<?>) o;
+
+        if (!propertyName.equals(property.propertyName)) return false;
+        return value.equals(property.value);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = propertyName.hashCode();
+        result = 31 * result + value.hashCode();
+        return result;
+    }
+
+    @Override
+    public @NotNull String toString() {
+        return "PropertyImpl(" +
+            "propertyName='" + propertyName + "'" +
+            ", value=" + value +
+            ')';
     }
 }
