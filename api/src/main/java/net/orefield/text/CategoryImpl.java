@@ -30,6 +30,7 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Implementation of {@link Category}.
@@ -63,5 +64,23 @@ class CategoryImpl implements Category {
 
     public @Nls(capitalization = Title) @NotNull String toString() {
         return friendlyName;
+    }
+
+    @Override
+    public boolean equals(final @Nullable Object o) {
+        if (this == o) return true;
+        if (!(o instanceof CategoryImpl)) return false;
+
+        CategoryImpl category = (CategoryImpl) o;
+
+        if (!name.equals(category.name)) return false;
+        return friendlyName.equals(category.friendlyName);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + friendlyName.hashCode();
+        return result;
     }
 }
