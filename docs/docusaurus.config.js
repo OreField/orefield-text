@@ -30,7 +30,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
     title: "OreField Text",
     tagline: "Beautiful messages",
-    url: "https://orefield.github.io/",
+    url: "https://dev.orefield.net/",
     baseUrl: "/orefield-text/",
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
