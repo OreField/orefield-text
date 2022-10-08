@@ -66,6 +66,13 @@ public interface Category {
     @NotNull Category STAFF = of("STAFF", "STAFF");
 
     /**
+     * The category for developer messages (e.g. debugging).
+     *
+     * @since 1.0.2
+     */
+    @NotNull Category DEV = of("DEV", "DEV");
+
+    /**
      * The category for messages related to the network (e.g. proxy restart messages).
      *
      * @since 1.0.0
