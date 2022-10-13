@@ -21,7 +21,7 @@ gradlew build
 
 ## 📕 Documentation
 
-[Getting Started](https://dev.orefield.net/orefield-text/docs/getting-started)
+[Getting Started](https://dev.orefield.net/docs/getting-started)
 
 ## 🤝 Contributing
 
