@@ -34,9 +34,6 @@ java {
     withSourcesJar()
 }
 
-group = "net.orefield"
-version = "1.0.2"
-
 dependencies {
     implementation(libs.javaAnnotations)
 
