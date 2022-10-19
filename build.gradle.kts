@@ -21,4 +21,5 @@
  */
 
 plugins {
+    id("it.nicolasfarabegoli.conventional-commits") version "3.0.12"
 }
